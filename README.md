@@ -9,11 +9,12 @@ DarkBot Manager
 ![image](https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white)
 
 A professional GUI tool for managing multiple DarkBot instances. This application helps automate maintenance tasks, update bot files, plugins and clean up unnecessary files across multiple bot installations.
-<img width="739" height="595" alt="LoveRussia2025 12 21 16 42 24" src="https://github.com/user-attachments/assets/b9a4b1ce-c2a5-48a7-b55e-220cfc985c1d" />
+<img width="739" height="595" alt="LoveRussia2025 12 21 16 42 24" src="https://github.com/user-attachments/assets/50ca52a4-3a5b-4564-9626-fe9c80cc126a" />
 
-<img width="739" height="595" alt="LoveRussia2025 12 21 16 25 20" src="https://github.com/user-attachments/assets/4848fd8d-f4b3-4142-8892-690dc4ecc587" />
+<img width="739" height="595" alt="LoveRussia2025 12 21 16 23 32" src="https://github.com/user-attachments/assets/255e73b2-e787-4691-b932-4388fce0f0fb" />
 
-<img width="739" height="595" alt="LoveRussia2025 12 21 16 23 32" src="https://github.com/user-attachments/assets/9419bf45-cfe1-4c41-8c7b-881ac9187d77" />
+<img width="739" height="595" alt="LoveRussia2025 12 21 16 25 20" src="https://github.com/user-attachments/assets/5c232556-c968-440b-9614-6297b54a2d64" />
+
 
 
 ## ✨ Features
@@ -48,7 +49,7 @@ Language Switching: Change interface language on-the-fly
 Extensible: Easy to add new language files
 
 ### ⚙️ Configuration
-Persistent Settings: Configuration stored in %APPDATA%/DarkBotManager/
+Persistent Settings: Configuration stored in `%APPDATA%/DarkBotManager/`
 
 Path Management: Easy setup of bot root, DarkBot.jar location, and plugin sources
 
@@ -75,11 +76,11 @@ This does not require python to be installed. It will work without it as any oth
 ### Option 2: Running from Source
 bash
  Clone the repository
-git clone https://github.com/yourusername/DarkBotManager.git
-cd DarkBotManager
+`git clone https://github.com/yourusername/DarkBotManager.git`
+`cd DarkBotManager`
 
  Run directly
-python DarkBotManager.py
+`python DarkBotManager.py`
 🖥️ Usage
 Initial Setup
 Launch the application
@@ -134,9 +135,9 @@ BotRoot/
 ## 🗂️ Configuration Files
 The application stores configuration in:
 
-Config: %APPDATA%\DarkBotManager\config.json
+Config: `%APPDATA%\DarkBotManager\config.json`
 
-Translations: %APPDATA%\DarkBotManager\translations.json
+Translations: `%APPDATA%\DarkBotManager\translations.json`
 
 You can access the configuration folder via the Open Config Folder button.
 
@@ -207,13 +208,15 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## Development Setup
 bash
 ### Clone and install development dependencies
-git clone https://github.com/yourusername/DarkBotManager.git
+`git clone https://github.com/yourusername/DarkBotManager.git`
 cd DarkBotManager
 ### No external dependencies required!
 Building Executables
 bash
 ### Using PyInstaller
-pyinstaller --onefile --noconsole --add-data "translations.json;." DarkBotManager.py
+`pyinstaller --onefile --noconsole --add-data "translations.json;." DarkBotManager.py`
+
+or simply `pyinstaller DarkBotManager.spec`
 
 ## 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
