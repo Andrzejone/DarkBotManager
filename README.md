@@ -49,7 +49,7 @@ Language Switching: Change interface language on-the-fly
 Extensible: Easy to add new language files
 
 ### ⚙️ Configuration
-Persistent Settings: Configuration stored in %APPDATA%/DarkBotManager/
+Persistent Settings: Configuration stored in `%APPDATA%/DarkBotManager/`
 
 Path Management: Easy setup of bot root, DarkBot.jar location, and plugin sources
 
@@ -76,11 +76,11 @@ This does not require python to be installed. It will work without it as any oth
 ### Option 2: Running from Source
 bash
  Clone the repository
-git clone https://github.com/yourusername/DarkBotManager.git
-cd DarkBotManager
+`git clone https://github.com/yourusername/DarkBotManager.git`
+`cd DarkBotManager`
 
  Run directly
-python DarkBotManager.py
+`python DarkBotManager.py`
 🖥️ Usage
 Initial Setup
 Launch the application
@@ -135,9 +135,9 @@ BotRoot/
 ## 🗂️ Configuration Files
 The application stores configuration in:
 
-Config: %APPDATA%\DarkBotManager\config.json
+Config: `%APPDATA%\DarkBotManager\config.json`
 
-Translations: %APPDATA%\DarkBotManager\translations.json
+Translations: `%APPDATA%\DarkBotManager\translations.json`
 
 You can access the configuration folder via the Open Config Folder button.
 
@@ -208,13 +208,15 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## Development Setup
 bash
 ### Clone and install development dependencies
-git clone https://github.com/yourusername/DarkBotManager.git
+`git clone https://github.com/yourusername/DarkBotManager.git`
 cd DarkBotManager
 ### No external dependencies required!
 Building Executables
 bash
 ### Using PyInstaller
-pyinstaller --onefile --noconsole --add-data "translations.json;." DarkBotManager.py
+`pyinstaller --onefile --noconsole --add-data "translations.json;." DarkBotManager.py`
+
+or simply `pyinstaller DarkBotManager.spec`
 
 ## 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
