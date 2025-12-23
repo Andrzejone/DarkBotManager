@@ -36,7 +36,7 @@ DEFAULT_CONFIG = {
     "bots_root": "",                     # root folder containing individual bot folders (1..N)
     "darkbot_jar_path": "",              # full path to updated DarkBot.jar
     "plugin_updates_folder": "",          # folder containing plugin .jar update files
-    "language": "en"                     # default language
+    "language": "en"                     # default language.
 }
 
 

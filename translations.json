@@ -52,7 +52,7 @@
 	"msg_error_bot_folder_does_not_exist": "Bot folder does not exist: {bot_path}",
 	"window_info_name_clearing_completed": "Finished",
 	"msg_info_clearing_completed": "Clearing completed. Check the log",
-	"extra_window_title": "Przydatne linki i zasoby",
+	"extra_window_title": "Przydatne linki i zasoby:",
 	"btn_open_link": "Otwórz",
 	"btn_copy_link": "Kopiuj",
 	"msg_link_copied": "Link skopiowany do schowka!"
@@ -110,7 +110,7 @@
 	"msg_error_bot_folder_does_not_exist": "Bot folder does not exist: {bot_path}",
 	"window_info_name_clearing_completed": "Finished",
 	"msg_info_clearing_completed": "Clearing completed. Check the log",
-	"extra_window_title": "Usefull links and resources",
+	"extra_window_title": "Usefull links and resources:",
 	"btn_open_link": "Open",
 	"btn_copy_link": "Copy",
 	"msg_link_copied": "Link copied to clipboard!"
