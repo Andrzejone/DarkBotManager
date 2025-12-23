@@ -1,7 +1,7 @@
 {
   "pl": {
 	"app_title": "DarkBotManager - Saimon favourite tool",
-    "menu_settings": "Zmień ustawienia",
+    "menu_settings": "Ustawienia",
 	"settings_folder": "Otwórz folder ustawień",
 	"extra_btn": "💡",
 	"bot_root": "Bot root:",
@@ -51,11 +51,15 @@
 	"log_msg_info_operation_start": "Start operation on {total} folders...",
 	"msg_error_bot_folder_does_not_exist": "Bot folder does not exist: {bot_path}",
 	"window_info_name_clearing_completed": "Finished",
-	"msg_info_clearing_completed": "Clearing completed. Check the log"
+	"msg_info_clearing_completed": "Clearing completed. Check the log",
+	"extra_window_title": "Przydatne linki i zasoby",
+	"btn_open_link": "Otwórz",
+	"btn_copy_link": "Kopiuj",
+	"msg_link_copied": "Link skopiowany do schowka!"
   },
   "en": {
 	"app_title": "DarkBotManager - Saimon favourite tool",
-    "menu_settings": "Change settings",
+    "menu_settings": "Settings",
 	"settings_folder": "Open settings folder",
 	"extra_btn": "💡",
 	"bot_root": "Bot root:",
@@ -105,6 +109,10 @@
 	"log_msg_info_operation_start": "Start operation on {total} folders...",
 	"msg_error_bot_folder_does_not_exist": "Bot folder does not exist: {bot_path}",
 	"window_info_name_clearing_completed": "Finished",
-	"msg_info_clearing_completed": "Clearing completed. Check the log"
+	"msg_info_clearing_completed": "Clearing completed. Check the log",
+	"extra_window_title": "Usefull links and resources",
+	"btn_open_link": "Open",
+	"btn_copy_link": "Copy",
+	"msg_link_copied": "Link copied to clipboard!"
   }
 }

@@ -16,6 +16,7 @@ import locale
 import shutil
 import threading
 import traceback
+import webbrowser
 from pathlib import Path
 from tkinter import (
     Tk, Toplevel, Frame, Label, Entry, Button, Listbox, Scrollbar,
@@ -185,9 +186,9 @@ class DarkBotManagerGUI:
         self.config_folder_btn = ttk.Button(top, text=self.tr.t("settings_folder"), command=self.open_config_folder)
         self.config_folder_btn.translation_key = "settings_folder"  # Dodany atrybut
         self.config_folder_btn.pack(side=LEFT)
-        self.extra_btn = ttk.Button(top, text=self.tr.t("extra_btn"), command=lambda: messagebox.showinfo("Extra", "No extra features yet."))
+        self.extra_btn = ttk.Button(top, text=self.tr.t("extra_btn"), command=self.open_extra_links)
         self.extra_btn.translation_key = "extra_btn"  # Dodany atrybut
-        self.extra_btn.pack(side=LEFT, padx=2)
+        self.extra_btn.pack(side=RIGHT, padx=2)
 
         # Middle: list of detected bot folders
         mid = ttk.Frame(self.root, padding=6)
@@ -260,6 +261,8 @@ class DarkBotManagerGUI:
         bottom.pack(fill=X)
         self.progress = ttk.Progressbar(bottom, orient="horizontal", mode="determinate", bootstyle="success-striped")
         self.progress.pack(fill=X, expand=True)
+        self.footer_discord_label = ttk.Label(text="Discord: youknowwho5111", foreground="lightblue")
+        self.footer_discord_label.pack(side="right")
         self.footer_text_label = ttk.Label(text=self.tr.t("footer_text"), foreground="lightblue")
         self.footer_text_label.translation_key = "footer_text"  # Dodany atrybut
         self.footer_text_label.pack(side="left")
@@ -448,6 +451,70 @@ class DarkBotManagerGUI:
             messagebox.showwarning(self.tr.t("window_error_name_validation"), "\n".join(msgs))
         for m in msgs:
             self.log_info(m)
+
+    def open_extra_links(self):
+    # Otwiera okno z przydatnymi linkami
+        extra_win = Toplevel(self.root)
+        extra_win.title(self.tr.t("extra_window_title"))
+        extra_win.resizable(False, False)
+        extra_win.transient(self.root)
+        extra_win.grab_set()
+
+    # Wyśrodkowanie względem głównego okna
+        self.root.update_idletasks()
+        x = self.root.winfo_rootx() + self.root.winfo_width() // 2 - 300
+        y = self.root.winfo_rooty() + self.root.winfo_height() // 2 - 200
+        extra_win.geometry(f"600x400+{x}+{y}")
+
+        frame = ttk.Frame(extra_win, padding=15)
+        frame.pack(fill=BOTH, expand=True)
+
+        ttk.Label(frame, text=self.tr.t("extra_window_title"), font=("-size", 14, "-weight", "bold")).pack(pady=(0, 15))
+
+    # Lista linków: (tekst_opisowy, url)
+        links = [
+            ("Java 17", "https://download.oracle.com/java/17/archive/jdk-17.0.12_windows-x64_bin.exe"),
+            ("Microsoft Visual C++ 17", "https://aka.ms/vs/17/release/vc_redist.x64.exe"),
+            ("DarkBot.eu", "https://darkbot.eu"),
+            ("DarkBot - Discord", "https://discord.gg/bEFgxCy"),
+            ("DarkBot - GitHub", "https://github.com/darkbot-reloaded/DarkBot"),
+        ]
+
+        for description, url in links:
+            row = ttk.Frame(frame)
+            row.pack(fill=X, pady=6)
+
+            label = ttk.Label(row, text=description, width=40, anchor="w")
+            label.pack(side=LEFT)
+
+            open_btn = ttk.Button(row, text=self.tr.t("btn_open_link"), width=12)
+            open_btn.configure(command=lambda u=url: webbrowser.open_new(u))
+            open_btn.pack(side=LEFT, padx=5)
+        # Tłumaczenie przycisku
+            try:
+                open_btn.translation_key = "btn_open_link"  # dla refresh_texts
+            except:
+                pass
+
+            copy_btn = ttk.Button(row, text=self.tr.t("btn_copy_link"), width=12)
+            copy_btn.configure(command=lambda u=url, w=extra_win: self.copy_to_clipboard(u, w))
+            copy_btn.pack(side=LEFT)
+            try:
+                copy_btn.translation_key = "btn_copy_link"
+            except:
+                pass
+
+    # Odśwież tłumaczenia w nowym oknie
+        self.refresh_texts(extra_win)
+
+    def copy_to_clipboard(self, text: str, parent_window):
+        """Kopiuje tekst do schowka i pokazuje potwierdzenie"""
+        try:
+            self.root.clipboard_clear()
+            self.root.clipboard_append(text)
+            self.root.update()  # żeby schowek się zaktualizował
+        except Exception as e:
+            messagebox.showerror("Błąd", f"Nie udało się skopiować: {e}", parent=parent_window)
 
     # Logging helpers
     def _log(self, text, tag=None):
