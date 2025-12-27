@@ -261,7 +261,7 @@ class DarkBotManagerGUI:
         bottom.pack(fill=X)
         self.progress = ttk.Progressbar(bottom, orient="horizontal", mode="determinate", bootstyle="success-striped")
         self.progress.pack(fill=X, expand=True)
-        self.footer_discord_label = ttk.Label(text="Discord: youknowwho5111", foreground="lightblue")
+        self.footer_discord_label = ttk.Label(text="Discord: crazygirl3598", foreground="lightblue")
         self.footer_discord_label.pack(side="right")
         self.footer_text_label = ttk.Label(text=self.tr.t("footer_text"), foreground="lightblue")
         self.footer_text_label.translation_key = "footer_text"  # Dodany atrybut
