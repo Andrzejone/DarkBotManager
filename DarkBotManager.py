@@ -162,11 +162,10 @@ class DarkBotManagerGUI:
         self.tr = self.translator
         root.geometry("737x563")
         root.resizable(False, False)
-        icon_path = resource_path("kekw.png")
+        icon_path = resource_path("kekw.ico")
         if os.path.exists(icon_path):
             try:
-                img = PhotoImage(file=icon_path)
-                self.root.iconphoto(False, img)
+                self.root.iconbitmap(icon_path)
             except Exception:
                 pass
         self.style = Style(theme="darkly")
