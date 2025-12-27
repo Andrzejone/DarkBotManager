@@ -39,6 +39,14 @@ DEFAULT_CONFIG = {
     "language": "en"                     # default language.
 }
 
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
 def ensure_config():
     """Ensure config dir and file exist. Return config dict."""
@@ -154,10 +162,10 @@ class DarkBotManagerGUI:
         self.tr = self.translator
         root.geometry("737x563")
         root.resizable(False, False)
-        icon_path = Path("C:/Users/LoveRussia/Downloads/kekw.png")
-        if icon_path.exists():
+        icon_path = resource_path("kekw.png")
+        if os.path.exists(icon_path):
             try:
-                img = PhotoImage(file=str(icon_path))
+                img = PhotoImage(file=icon_path)
                 self.root.iconphoto(False, img)
             except Exception:
                 pass
