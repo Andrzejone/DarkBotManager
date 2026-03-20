@@ -81,6 +81,7 @@ bash
 
  Run directly
 `python DarkBotManager.py`
+
 🖥️ Usage
 Initial Setup
 Launch the application
