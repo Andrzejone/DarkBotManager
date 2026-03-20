@@ -82,7 +82,7 @@ bash
  Run directly
 `python DarkBotManager.py`
 
-🖥️ Usage
+## 🖥️ Usage
 
 Initial Setup
 
