@@ -385,7 +385,7 @@ class DarkBotManagerGUI:
         lang_label.translation_key = "label_language"
         lang_label.pack(side=LEFT)
 
-        langs = ["pl", "en"]
+        langs = ["pl", "en", "tr"]
         lang_var = StringVar(value=self.cfg.get("language", self.tr.lang))
 
         option_menu = ttk.OptionMenu(lang_inner, lang_var, lang_var.get(), *langs)
