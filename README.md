@@ -40,13 +40,13 @@ Plugin Updates: Distributes plugin .jar files to bot update folders
 Intelligent Filtering: Skips DarkBot.jar in plugin folders (treats it as core file)
 
 ### 🌐 Internationalization
-Multi-language Support: English and Polish interfaces
+Multi-language Support: English, Polish and Turkish interfaces
 
 Auto-detection: Automatically uses system language
 
 Language Switching: Change interface language on-the-fly
 
-Extensible: Easy to add new language files
+Extensible: Easy to add new language translations
 
 ### ⚙️ Configuration
 Persistent Settings: Configuration stored in `%APPDATA%/DarkBotManager/`
